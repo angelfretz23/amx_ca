@@ -10,14 +10,14 @@ class ProduceFinderTests {
     @Test
     fun testAbleToInitProducefromString() {
         val appleString = "APPLE"
-        val apple = ProduceFinder.valueOf(appleString).produce
+        val apple = ProduceFinder.valueOf(appleString).pick
         assertNotNull(apple)
-        assertEquals(0.60, apple.price)
+        assertEquals(0.60F, apple.price)
 
         val orangeString = "ORANGE"
-        val orange = ProduceFinder.valueOf(orangeString).produce
+        val orange = ProduceFinder.valueOf(orangeString).pick
         assertNotNull(orange)
-        assertEquals(0.25, orange.price)
+        assertEquals(0.25F, orange.price)
     }
 
     @Test(expected = IllegalArgumentException::class)

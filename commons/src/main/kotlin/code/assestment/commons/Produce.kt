@@ -1,5 +1,5 @@
 package code.assestment.commons
 
-interface Produce {
-    val price: Double
+abstract class Produce(open val id: String) {
+    abstract val price: Float
 }

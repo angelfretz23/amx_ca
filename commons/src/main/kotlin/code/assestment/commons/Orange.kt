@@ -1,6 +1,6 @@
 package code.assestment.commons
 
-class Orange: Produce {
-    override val price: Double
-        get() = 0.25
+class Orange(override val id: String = "ORANGE"): Produce(id) {
+    override val price: Float
+        get() = 0.25F
 }

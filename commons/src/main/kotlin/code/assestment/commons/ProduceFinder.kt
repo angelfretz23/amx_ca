@@ -2,13 +2,13 @@ package code.assestment.commons
 
 enum class ProduceFinder {
     APPLE {
-        override val produce: Produce
+        override val pick: Produce
             get() = Apple()
     },
     ORANGE {
-        override val produce: Produce
+        override val pick: Produce
             get() = Orange()
     };
 
-    abstract val produce: Produce
+    abstract val pick: Produce
 }
