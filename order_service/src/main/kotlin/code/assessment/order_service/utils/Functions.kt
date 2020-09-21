@@ -2,7 +2,7 @@ package code.assessment.order_service.utils
 
 import code.assestment.commons.ProduceIndex
 
-private val regex: Regex
+internal val regex: Regex
     get() {
         val regexString = ProduceIndex.values()
                 .map { it.toString() }
