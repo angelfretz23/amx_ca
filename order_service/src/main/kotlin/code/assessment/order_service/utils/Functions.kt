@@ -1,19 +1,19 @@
 package code.assessment.order_service.utils
 
-import code.assestment.commons.ProduceFinder
+import code.assestment.commons.ProduceIndex
 
 private val regex: Regex
     get() {
-        val regexString = ProduceFinder.values()
+        val regexString = ProduceIndex.values()
                 .map { it.toString() }
-                .reduce { acc, next ->  "$acc|$next"}
+                .reduce { acc, next -> "$acc|$next" } // (APPLE|ORANGE)
         return Regex("($regexString)")
     }
 
 internal fun gather(order: String): Map<Product, Int> {
     val produceList = regex.findAll(order.toUpperCase())
-            .map{ it.value }
-            .map{ ProduceFinder.valueOf(it).pick }
+            .map { it.value }
+            .map { ProduceIndex.valueOf(it).pick }
             .toList()
     return produceList.consolidate
 }

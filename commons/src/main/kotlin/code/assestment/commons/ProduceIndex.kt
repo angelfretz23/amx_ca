@@ -1,6 +1,6 @@
 package code.assestment.commons
 
-enum class ProduceFinder {
+enum class ProduceIndex {
     APPLE {
         override val pick: Produce
             get() = Apple()
