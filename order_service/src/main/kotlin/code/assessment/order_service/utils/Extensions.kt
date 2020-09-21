@@ -1,5 +1,6 @@
 package code.assessment.order_service.utils
 
+import code.assestment.commons.Cart
 import code.assestment.commons.Produce
 import code.assestment.commons.ProduceIndex
 
@@ -21,9 +22,10 @@ fun Map<Product, Int>.getCostPerItem(offers: Map<Product, OfferHandler> = emptyM
     }.toMap()
 }
 
-val Map<Product, Float>.grandTotal: Float
-    get() {
-        return this.map { it.value }
+val Map<Product, Float>.grandTotal: (Cart) -> Cart
+    get() = { cart ->
+        val total = this.map { it.value }
                 .takeIf { it.isNotEmpty() }
                 ?.reduce { acc, next -> acc + next } ?: 0.0F
+         Cart(cart.appleCount, cart.orangeCount, total)
     }

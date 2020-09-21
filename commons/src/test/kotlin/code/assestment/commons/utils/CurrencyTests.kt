@@ -1,4 +1,4 @@
-package code.assessment.order_service.utils
+package code.assestment.commons.utils
 
 import org.junit.Test
 import kotlin.test.assertEquals
