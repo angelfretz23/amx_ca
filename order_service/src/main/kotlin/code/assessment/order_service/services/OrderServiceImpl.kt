@@ -14,6 +14,7 @@ class OrderServiceImpl : OrderService {
         val cart = Cart(appleCount, orangeCount)
 
         return gatherOrder
+                .verifyInventory
                 .getCostPerItem(offers)
                 .grandTotal(cart)
     }
